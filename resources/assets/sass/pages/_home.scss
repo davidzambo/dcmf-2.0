@@ -1,0 +1,41 @@
+/*
+  These files contains the css of the home page
+*/
+
+#header{
+  background-color: $dark-grey;
+  font-size: 2rem;
+  color: #F5F5F5;
+  height: 100%;
+  min-height: 100%;
+  .row{
+    height: 100%;
+  }
+}
+
+#about{
+  // *{border: 1px solid black;}
+  position: relative;
+  .section-title{
+    margin: 4rem 0 2rem;
+  }
+  code{color: $red;}
+  mark{
+    background-color: $dark-grey;
+    color: $extra-light-grey;
+  }
+  .p-with-list{
+    display: inline;
+  }
+  ul{
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    padding-left: 0;
+    li{
+      text-align: center;
+      display: block;
+      list-style: none;
+    }
+  }
+}

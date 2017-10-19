@@ -1,0 +1,31 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// Font Awesome
+@import "font-awesome/font-awesome";
+
+@import "colors";
+@import "typography";
+@import "pages/home";
+// DCFM Logo
+@import "dcmf";
+
+// * {border: 1px solid black;}
+html{min-height: 100%;}
+
+body{
+  font-size: 27px;
+  font-family: $kaffeesatz;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
