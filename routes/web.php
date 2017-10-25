@@ -1,10 +1,9 @@
 <?php
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('/', function(){
-//   echo 'hi';
-// });
+Route::get('/', 'HomeController@index');
 
-Route::resource('/', 'HomeController');
+Route::resource('login', 'LoginController', ['only' => ['store', 'destroy']]);
+
+Route::resource('portfolio', 'PortfolioController');
+
+// Route::resource('skills','SkillsController');

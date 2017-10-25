@@ -8319,21 +8319,28 @@ a.text-dark:focus, a.text-dark:hover {
 /*
   These files contains the css of the home page
 */
+.section-title {
+  margin: 4rem 0 2rem; }
+
+code {
+  color: #E80000;
+  background-color: transparent; }
+
 #header {
   background-color: #383838;
+  position: static;
   font-size: 2rem;
   color: #F5F5F5;
   height: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+  z-index: 10000 !important; }
   #header .row {
-    height: 100%; }
+    height: 100%;
+    z-index: 10000 !important; }
 
 #about {
+  z-index: -10;
   position: relative; }
-  #about .section-title {
-    margin: 4rem 0 2rem; }
-  #about code {
-    color: #E80000; }
   #about mark {
     background-color: #383838;
     color: #F5F5F5; }
@@ -8348,6 +8355,107 @@ a.text-dark:focus, a.text-dark:hover {
       text-align: center;
       display: block;
       list-style: none; }
+
+#portfolio {
+  z-index: -10;
+  position: relative;
+  background-color: #383838;
+  color: #A5A5A5; }
+  #portfolio img {
+    position: relative;
+    z-index: 1000000;
+    display: block; }
+  #portfolio .portfolio-container {
+    position: relative;
+    z-index: 0;
+    padding: 2px; }
+    #portfolio .portfolio-container .portfolio-info-container {
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      z-index: 1000;
+      transition: all 1s;
+      background-color: #383838;
+      color: #A5A5A5; }
+      #portfolio .portfolio-container .portfolio-info-container h3 {
+        padding: 0.5rem 1rem;
+        color: #E80000; }
+    #portfolio .portfolio-container:hover .portfolio-info-container {
+      opacity: 1;
+      top: 80%;
+      z-index: 1000;
+      transition: all 1s; }
+  #portfolio .admin-button {
+    position: absolute;
+    top: 10px;
+    z-index: 10; }
+  #portfolio .edit-button {
+    right: 10px; }
+  #portfolio .delete-button {
+    left: 10px; }
+  #portfolio .image-container {
+    position: relative;
+    z-index: 5;
+    display: block; }
+
+.dcmf-navbar-container {
+  position: fixed;
+  bottom: 20%;
+  left: 0px;
+  padding: 0 !important;
+  z-index: -1; }
+  .dcmf-navbar-container .dcmf-navbar {
+    position: absolute;
+    background-color: #F5F5F5;
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    border: 1px solid #A5A5A5;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-transform: lowercase; }
+  .dcmf-navbar-container .navbar-nav .nav-item:first-child .nav-link {
+    padding-left: 2rem;
+    border-bottom-left-radius: 10px; }
+  .dcmf-navbar-container .navbar-nav .nav-item:last-child .nav-link {
+    padding-right: 2rem;
+    border-bottom-right-radius: 10px; }
+
+.nav-item {
+  font-size: 1.5rem;
+  z-index: 2000;
+  transition: all 0.5s; }
+  .nav-item .nav-link {
+    color: #383838;
+    background-color: #F5F5F5;
+    padding: 0.5rem;
+    font-weight: 400;
+    transition: all 0.5s; }
+  .nav-item:hover .nav-link {
+    padding: 0.5rem 1rem;
+    color: #E80000;
+    background-color: #A5A5A5;
+    font-weight: 500;
+    transition: all 0.5s; }
+  .nav-item .active {
+    padding: 0.5rem 1rem;
+    color: #E80000;
+    background-color: #A5A5A5;
+    font-weight: 500; }
+
+.nav-link {
+  z-index: 10; }
+
+.no-gutters {
+  padding: 0;
+  margin: 0; }
 
 .dcmf-container {
   color: #333; }
@@ -8400,5 +8508,19 @@ body {
   height: 100%;
   min-height: 100%;
   min-width: 100%; }
+
+.see-borders * {
+  border: 1px solid black; }
+
+.clickable:hover {
+  cursor: pointer; }
+
+input[type=file] {
+  display: none; }
+
+#logout-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; }
 
 /*# sourceMappingURL=app.css.map */

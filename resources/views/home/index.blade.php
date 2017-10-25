@@ -5,7 +5,9 @@
 @stop
 
 @section('navbar')
+
   @include('layouts.navbar')
+
 @stop
 
 
@@ -14,6 +16,22 @@
   @include('home.welcome')
 
   @include('home.about')
+
+  @include('home.services')
+
+  @include('home.portfolio')
+
+
+    @if (session('username') === 'David')
+
+      @include('admin.extensions')
+
+    @else
+
+      @include('home.login')
+
+    @endif
+
 
 @stop
 

@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Skills;
-use App\Portfolio;
 use App\User;
-use App\Service;
 
-class HomeController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $skills = Skills::orderBy('order_number', 'asc')->get();
-      $portfolios = Portfolio::orderBy('created_at', 'desc')->get();
-      $services = Service::orderBy('order_number', 'asc')->get();
-      return view('home.index', compact(['skills', 'portfolios', 'services']));
+        //
     }
 
     /**
@@ -41,16 +35,30 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-      //
+      $user = User::where('email', $request->email)->first();
+
+      if ($user->password == hash('sha512', $request->password)) {
+        session([
+          'uid' => $user->id,
+          'username' => $user->name,
+          'email' => $user->email
+        ]);
+        return redirect('/');
+      } else {
+        echo 'nem nyert';
+        echo $request['email'];
+        echo $request->password;
+        echo "dik, benn vagy";
+      }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Portfolio  $portfolio
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Portfolio $portfolio)
+    public function show($id)
     {
         //
     }
@@ -58,10 +66,10 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Portfolio  $portfolio
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portfolio $portfolio)
+    public function edit($id)
     {
         //
     }
@@ -70,10 +78,10 @@ class HomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Portfolio  $portfolio
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -81,13 +89,12 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Portfolio  $portfolio
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-      echo $id;
-      echo 'bye';
-      return 'alma';
+        $request->session()->flush();
+        return redirect('/');
     }
 }

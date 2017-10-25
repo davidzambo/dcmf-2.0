@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Portfolio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
@@ -14,7 +15,8 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        //
+        $portfolios = Portfolio::get();
+        return view('home.portfolio', compact('portfolios'));
     }
 
     /**
@@ -35,7 +37,20 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $folder = 'images/portfolio';
+
+      $p = new Portfolio;
+
+      $p->name = $request->portfolioName;
+      $p->link = $request->portfolioLink;
+      $p->short_description = $request->portfolioShortDescription;
+      $p->long_description = $request->portfolioLongDescription;
+      $path = $request->file('portfolioThumbnail')->store($folder);
+      $p->thumbnail = "storage/$path";
+      $p->save();
+
+      $portfolios = Portfolio::get();
+      return view('home.portfolio', compact('portfolios'));
     }
 
     /**
@@ -67,9 +82,26 @@ class PortfolioController extends Controller
      * @param  \App\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(Request $request)
     {
-        //
+      $p = Portfolio::find($request->editPortfolioId);
+
+      if (!empty($request->editPortfolioThumbnail)){
+        Storage::delete(str_after($p->thumbnail, 'storage/'));
+
+        $folder = 'images/portfolio';
+        $path = $request->file('editPortfolioThumbnail')->store($folder);
+        $p->thumbnail = "storage/$path";
+      }
+
+      $p->name = $request->editPortfolioName;
+      $p->link = $request->editPortfolioLink;
+      $p->short_description = $request->editPortfolioShortDescription;
+      $p->long_description = $request->editPortfolioLongDescription;
+      $p->save();
+
+      $portfolios = Portfolio::get();
+      return view('home.portfolio', compact('portfolios'));
     }
 
     /**
@@ -78,8 +110,13 @@ class PortfolioController extends Controller
      * @param  \App\Portfolio  $portfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Portfolio $portfolio)
+    public function destroy($id)
     {
-        //
+        $p = Portfolio::find($id);
+        Storage::delete(str_after($p->thumbnail, 'storage/'));
+        $p->delete();
+
+        $portfolios = Portfolio::get();
+        return view('home.portfolio', compact('portfolios'));
     }
 }

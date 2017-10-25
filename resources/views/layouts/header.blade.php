@@ -11,4 +11,11 @@
     {{-- The complied app.css contains Font Awesome stylesheet --}}
     <link rel="stylesheet" href="css/app.css">
     <title>{{ $title }}</title>
+    <script src="js/app.js"></script>
   </head>
+<body data-spy="scroll" data-target="#dcmf-navbar" data-offset="500">
+<style>
+  #portfolio{
+    padding-left: 5rem;
+  }
+</style>

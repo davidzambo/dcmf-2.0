@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Skills;
-use App\Portfolio;
-use App\User;
 use App\Service;
+use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $skills = Skills::orderBy('order_number', 'asc')->get();
-      $portfolios = Portfolio::orderBy('created_at', 'desc')->get();
-      $services = Service::orderBy('order_number', 'asc')->get();
-      return view('home.index', compact(['skills', 'portfolios', 'services']));
+        //
     }
 
     /**
@@ -41,16 +35,16 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-      //
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Portfolio  $portfolio
+     * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Portfolio $portfolio)
+    public function show(Service $service)
     {
         //
     }
@@ -58,10 +52,10 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Portfolio  $portfolio
+     * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portfolio $portfolio)
+    public function edit(Service $service)
     {
         //
     }
@@ -70,10 +64,10 @@ class HomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Portfolio  $portfolio
+     * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Portfolio $portfolio)
+    public function update(Request $request, Service $service)
     {
         //
     }
@@ -81,13 +75,11 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Portfolio  $portfolio
+     * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Service $service)
     {
-      echo $id;
-      echo 'bye';
-      return 'alma';
+        //
     }
 }

@@ -2,24 +2,27 @@
   These files contains the css of the home page
 */
 
+.section-title{margin: 4rem 0 2rem;}
+code{color: $red; background-color: transparent}
+
 #header{
   background-color: $dark-grey;
+  position: static;
   font-size: 2rem;
   color: #F5F5F5;
   height: 100%;
   min-height: 100%;
+  z-index: 10000!important;
+
   .row{
     height: 100%;
+    z-index: 10000!important;
   }
 }
 
 #about{
-  // *{border: 1px solid black;}
+  z-index: -10;
   position: relative;
-  .section-title{
-    margin: 4rem 0 2rem;
-  }
-  code{color: $red;}
   mark{
     background-color: $dark-grey;
     color: $extra-light-grey;
@@ -37,5 +40,57 @@
       display: block;
       list-style: none;
     }
+  }
+}
+
+#portfolio{
+  z-index: -10;
+  position: relative;
+  background-color: $dark-grey;
+  color: $light-grey;
+
+  img {
+    position: relative;
+    z-index: 1000000;
+    display: block;
+  }
+  .portfolio-container{
+    position : relative;
+    z-index: 0;
+    padding: 2px;
+    .portfolio-info-container{
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      z-index: 1000;
+      transition: all 1s;
+      background-color: $dark-grey;
+      color: $light-grey;
+      h3{
+        padding: 0.5rem 1rem;
+        color: $red;
+      }
+      p{}
+    }
+    &:hover{
+      .portfolio-info-container{
+        opacity: 1;
+        top: 80%;
+        z-index: 1000;
+        transition: all 1s;
+      }
+    }
+  }
+  .admin-button{
+    position: absolute;
+    top: 10px;
+    z-index: 10;
+  }
+  .edit-button{right: 10px;}
+  .delete-button{left: 10px;}
+  .image-container{
+    position:relative;
+    z-index:5;
+    display: block
   }
 }
