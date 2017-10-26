@@ -5,53 +5,64 @@
         <code>&lt;whatido&gt;</code>
       </div>
       <div class="row">
-        @foreach($portfolios as $portfolio)
-          <!-- <div class="col-4 portfolio-container">
+        @foreach($services as $service)
+          <div class="col-4 service-container">
+            <div class="container">
+              <div class="row no-gutters service-title">
+                <div class="col-5 text-right">
+                  <span class="fa-stack text-primary fa-2x">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    {!! $service->icon !!}
+                  </span>
+                </div>
+                <div class="col-7 text-left align-self-center">
+                  <h2>{{ $service->name }}</h2>
+                </div>
+              </div>
 
-            @if (!empty(session('username')))
-            <div class="admin-button edit-button">
-              <i class="fa fa-pencil btn-sm btn-warning clickable"
-              data-toggle="modal"
-              data-target="#editPortfolio"
-              data-name="{{ $portfolio->name }}"
-              data-link="{{ $portfolio->link }}"
-              data-shortDesc="{{ $portfolio->short_description }}"
-              data-longDesc="{{ $portfolio->long_description }}"
-              data-thumbnail="{{ $portfolio->thumbnail }}"
-              data-id="{{ $portfolio->id }}"
-              aria-hidden="true"></i>
-            </div>
-            <div class="admin-button delete-button">
-              <i class="fa fa-times btn-sm btn-danger clickable" data-toggle="modal" data-target="#deletePortfolio" data-id="{{ $portfolio->id }}" aria-hidden="true"></i>
-            </div>
-            @endif
+              <div class="row">
+                <div class="col service-body">
+                  <p class="text-justify">{!! $service->description !!}</p>
+                </div>
+              </div>
 
-            <a href="{{ $portfolio->link }}" target="_blank">
-            <div class="image-container">
-              <img src="{{ $portfolio->thumbnail }}"  class="img-fluid greyscale">
-            </div>
 
-            <div class="portfolio-info-container" title="{{ $portfolio->long_description }}">
-              <h3>{{ $portfolio->name }}</h3>
-              <!-- <p><small>{{ $portfolio->short_descrition}}</small></p> -->
-            <!-- </div>
-            </a>
-          </div> --> -->
+
+              @if (!empty(session('username')))
+              <div class="row">
+                <div class="col-auto">
+                  <i class="fa fa-times btn-sm btn-danger clickable" data-toggle="modal" data-target="#deleteService" data-id="{{ $service->id }}" aria-hidden="true"></i>
+                </div>
+                <div class="col-auto ml-auto">
+                  <i class="fa fa-pencil btn-sm btn-warning clickable"
+                  data-toggle="modal"
+                  data-target="#serviceModal"
+                  data-name="{{ $service->name }}"
+                  data-icon="{{ $service->icon }}"
+                  data-description="{{ $service->description }}"
+                  data-ordernumber="{{ $service->order_number }}"
+                  data-id="{{ $service->id }}"
+                  aria-hidden="true"></i>
+                </div>
+              </div>
+              @endif
+
+            </div>
+          </div>
         @endforeach
       </div>
       @if (!empty(session('username')))
 
         <div class="row">
-          <div class="col-auto ml-auto clickable" data-toggle="modal" data-target="#addNewService">
-            <i class="fa fa-plus-circle clickable" aria-hidden="true"></i>
-            Add new element
+          <div class="col-auto ml-auto clickable" data-toggle="modal" data-target="#serviceModal" data-action="new">
+            <i class="fa fa-plus-circle clickable" aria-hidden="true"></i> Add new element
           </div>
         </div>
 
       @endif
 
       <div class="section-title text-right">
-        <code>&lt;/briefcase&gt;</code>
+        <code>&lt;/whatido&gt;</code>
       </div>
     </div>
   </div>

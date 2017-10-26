@@ -15,7 +15,8 @@
   </head>
 <body data-spy="scroll" data-target="#dcmf-navbar" data-offset="500">
 <style>
-  #portfolio{
+  #portfolio, #services, #skills, #about, #contact{
     padding-left: 5rem;
+    padding-right: 5rem;
   }
 </style>

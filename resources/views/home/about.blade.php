@@ -1,6 +1,9 @@
 <section class="container-fluid" id="about">
   <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10">
+    <div class="col-lg-5">
+
+    </div>
+    <div class="col-lg-7">
       <div class="section-title">
         <code>&lt;whoami&gt;</code>
       </div>
@@ -38,7 +41,7 @@
 
       <p>So that's the reason, I think of myself as a <mark>full stack web developer</mark>.</p>
 
-      <div class="section-title">
+      <div class="section-title text-right">
         <code>&lt;/whoami&gt;</code>
       </div>
     </div>

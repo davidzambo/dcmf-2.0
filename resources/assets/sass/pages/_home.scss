@@ -43,6 +43,26 @@ code{color: $red; background-color: transparent}
   }
 }
 
+#skills{
+  position: relative;
+  z-index: -10;
+  .skill-name{
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    background-color: $extra-light-grey;
+    color: $dark-grey;
+  }
+  .progress{
+    height:2.5rem;
+    font-size: 1rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    border-radius: 0;
+  }
+}
+
 #portfolio{
   z-index: -10;
   position: relative;
@@ -93,4 +113,34 @@ code{color: $red; background-color: transparent}
     z-index:5;
     display: block
   }
+}
+
+.ck-editor__editable {min-height: 300px;}
+
+
+#services{
+  position: relative;
+  z-index: -10;
+  min-height: 100%;
+  background-color: $dark-grey;
+  color: $extra-light-grey;
+  .service-title{
+    h2 {
+      vertical-align: bottom;
+      margin-bottom: 0;
+    }
+    .fa-stack{
+      text-shadow: 2px -2px 5px #777;
+    }
+  }
+  .service-body{
+    padding-top: 2rem;
+    p{ font-size: 1.3rem;}
+  }
+
+}
+
+#contact{
+  position: relative;
+  z-index: -10;
 }

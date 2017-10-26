@@ -2,16 +2,22 @@
   <div class="dcmf-navbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#header">home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#portfolio">Briefcase</a>
+        <a class="nav-link" href="#about">about</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">Contact</a>
+        <a class="nav-link" href="#services">workflow</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Social</a>
+        <a class="nav-link" href="#skills">skills</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#portfolio">porfolio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">contact</a>
       </li>
     </ul>
   </div>

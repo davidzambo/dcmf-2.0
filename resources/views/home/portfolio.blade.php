@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col-12">
       <div class="section-title text-left">
-        <code>&lt;briefcase&gt;</code>
+        <code>&lt;portfolio&gt;</code>
       </div>
       <div class="row">
         @foreach($portfolios as $portfolio)
@@ -51,7 +51,7 @@
       @endif
 
       <div class="section-title text-right">
-        <code>&lt;/briefcase&gt;</code>
+        <code>&lt;/portfolio&gt;</code>
       </div>
     </div>
   </div>

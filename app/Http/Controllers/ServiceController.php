@@ -35,7 +35,14 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $service = new Service;
+        $service->name = $request->name;
+        $service->icon = $request->icon;
+        $service->description = $request->description;
+        $service->order_number = $request->order_number;
+        $service->save();
+
+        return Service::get();
     }
 
     /**
@@ -67,9 +74,16 @@ class ServiceController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, $id)
     {
-        //
+      $service = Service::find($id);
+      $service->name = $request->name;
+      $service->icon = $request->icon;
+      $service->description = $request->description;
+      $service->order_number = $request->order_number;
+      $service->save();
+
+      return Service::get();
     }
 
     /**
@@ -78,8 +92,11 @@ class ServiceController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy($id)
     {
-        //
+        $service = Service::find($id);
+        $service->delete();
+
+        return Service::get();
     }
 }

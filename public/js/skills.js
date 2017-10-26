@@ -1,76 +1,77 @@
-function showPreview(e, whereToRender){
-  let file = e.target.files[0];
-  var reader = new FileReader();
-  reader.readAsDataURL(file);
-  reader.onload = function(){
-    $('#'+whereToRender).attr('src', this.result).show();
-  }
-}
-
-
-function addNewSkill(e){
-  let name = $('#skillName').val(),
-      experience = $('#skillExperience').val(),
-      order = $('#skillOrderNumber').val(),
-      thumbnail = $('#skillThumbnail').val();
-
-  let skillForm = document.querySelector('#skillForm');
-  let request = new XMLHttpRequest();
-
-  if ((name !== '') && (experience !== 0) && (thumbnail !== '')){
-    request.open("POST", "skills");
-    request.send(new FormData(skillForm));
-    $('#addNewSkill').modal('toggle');
-  } else {
-    $('#skillErrorMessage').html('Please check the input fields!').addClass('alert alert-danger');
-  }
-}
-
-function emptySkillForm(){
-  $('#skillName').val('');
-  $('#skillExperience').val('');
-  $('#skillOrderNumber').val('');
-  $('#skillThumbnail').val('');
-  $('#skillThumbnailPreview').attr('src','').hide();
-}
-
-
-$('#editSkill').on('show.bs.modal', function(event){
+$('#skillModal').on('show.bs.modal', function(event){
   let button = $(event.relatedTarget),
       name = button.data('name'),
       experience = button.data('experience'),
-      thumbnail = button.data('thumbnail'),
-      order = button.data('order'),
+      ordernumber = button.data('ordernumber'),
       id = button.data('id'),
+      title = button.data('title'),
       modal = $(this);
-  $('#editSkillName').val(name);
-  $('#editSkillExperience').val(experience);
-  $('#editSkillOrderNumber').val(order);
-  $('#editSkillId').val(id);
-  $('#editSkillThumbnailPreview').attr('src', thumbnail);
+  modal.find('input[name="skillId"]').val(id);
+  modal.find('input[name="skillName"]').val(name);
+  modal.find('select[name="skillExperience"]').val(experience);
+  modal.find('input[name="skillOrderNumber"]').val(ordernumber);
+  modal.find('.modal-title').text(title);
+  if (title === 'Edit skill'){
+    $('#updateSkill').show();
+    $('#newSkill').hide();
+  } else {
+    $('#updateSkill').hide();
+    $('#newSkill').show();
+  }
 });
 
 
-function updateSkill(){
-  let name = $('#editSkillName').val(),
-      experience = $('#editSkillExperience').val(),
-      order = $('#editSkillOrderNumber').val(),
-      thumbnail = $('#editSkillThumbnail').val(),
-      id = $('#editSkillId').val();
-      alert(id);
+$('#updateSkill').on('click', function(){
+  let name = $('#skillName').val(),
+      experience = $('#skillExperience').val(),
+      ordernumber = $('#skillOrderNumber').val(),
+      id = $('#skillId').val();
+      token = $('input[name=_token]').val();
+  $.ajax({
+    url: 'skill/'+id,
+    type: 'post',
+    data:{
+      _token : token,
+      _method : 'PUT',
+      name : name,
+      experience : experience,
+      ordernumber : ordernumber
+    },
+    success : function(response){
+      $('#skillModal').modal('hide');
+    },
+    error : function(response){
+      alert(response.responseText);
+    }
+  });
+  // $('#skillModal').modal('hide');
+  return false;
+});
 
 
-  let editSkillForm = document.querySelector('#editSkillForm');
-  let request = new XMLHttpRequest();
-
-  if ((name !== '') && (experience !== 0)){
-    request.open("POST", "skills/"+id);
-    request.send(new FormData(editSkillForm));
-    // $('#editSkill').modal('toggle');
-  } else {
-    $('#editSkillErrorMessage').html('Please check the input fields!').addClass('alert alert-danger');
-  }
-}
+$('#newSkill').on('click', function(){
+  let name = $('#skillName').val(),
+      experience = $('#skillExperience').val(),
+      ordernumber = $('#skillOrderNumber').val(),
+      token = $('input[name=_token]').val();
+  $.ajax({
+    url: 'skill',
+    type: 'post',
+    data:{
+      _token : token,
+      name : name,
+      experience : experience,
+      ordernumber : ordernumber
+    },
+    success : function(response){
+      $('#skillModal').modal('hide');
+    },
+    error : function(response){
+      alert(response.responseText);
+    }
+  });
+  return false;
+});
 
 
 $('#deleteSkill').on('show.bs.modal', function(event){
@@ -82,13 +83,21 @@ $('#deleteSkill').on('show.bs.modal', function(event){
 
 
 function deleteSkill(){
-  let index = $('#deleteIndex').val();
+  let index = $('#deleteIndex').val(),
+      token = $('input[name=_token]').val();
   $.ajax({
-    url : 'skills/'+index,
+    url : 'skill/'+index,
     type : 'post',
     data : {
-      '_method' : 'DELETE'
+      _token : token,
+      _method : 'DELETE'
+    },
+    success : function(response){
+      $('#skillModal').modal('hide');
+    },
+    error : function(response){
+      alert(response.responseText);
     }
   });
-  $('#deleteSkill').modal('toggle');
+  $('#deleteSkill').modal('hide');
 }

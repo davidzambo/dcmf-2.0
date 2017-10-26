@@ -19,7 +19,11 @@
 
   @include('home.services')
 
+  @include('home.skills')
+
   @include('home.portfolio')
+
+  @include('home.contact')
 
 
     @if (session('username') === 'David')

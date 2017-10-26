@@ -6,8 +6,11 @@
  */
 
  window.Popper = require('../../../node_modules/popper.js/dist/popper').default;
+ require('../../../node_modules/@ckeditor/ckeditor5-build-classic');
+
 
  require('./bootstrap');
+
 
 
 // window.Vue = require('vue');
