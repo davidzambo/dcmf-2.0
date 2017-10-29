@@ -74,14 +74,14 @@
 
 <script src="./../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
 <script>
-ClassicEditor
-    .create( document.querySelector( '#serviceDescription' ) )
-    .then( editor => {
-        // console.log( editor );
-    } )
-    .catch( error => {
-        console.error( error );
-} );
+// ClassicEditor
+//     .create( document.querySelector( '#serviceDescription' ) )
+//     .then( editor => {
+//         // console.log( editor );
+//     } )
+//     .catch( error => {
+//         console.error( error );
+// } );
 $('#addNewService').hide();
 $('#updateService').hide();
 </script>

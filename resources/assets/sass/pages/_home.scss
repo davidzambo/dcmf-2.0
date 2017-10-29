@@ -2,27 +2,50 @@
   These files contains the css of the home page
 */
 
+#portfolio,
+#services,
+#skills,
+#about,
+#contact,
+#header{
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
 .section-title{margin: 4rem 0 2rem;}
 code{color: $red; background-color: transparent}
 
+#cover-image{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -15;
+  width: 100%;
+  img{
+    width: 100%!important;
+    height: auto;
+    filter: sepia(0.5);
+    filter:grayscale(0.5);
+  }
+}
+
 #header{
-  background-color: $dark-grey;
-  position: static;
+  background-color: transparent;
+  position: relative;
   font-size: 2rem;
   color: #F5F5F5;
   height: 100%;
   min-height: 100%;
-  z-index: 10000!important;
-
+  z-index: -10;
   .row{
     height: 100%;
-    z-index: 10000!important;
   }
 }
 
 #about{
   z-index: -10;
   position: relative;
+  background-color: $white;
   mark{
     background-color: $dark-grey;
     color: $extra-light-grey;
@@ -44,6 +67,7 @@ code{color: $red; background-color: transparent}
 }
 
 #skills{
+  background-color: $white;
   position: relative;
   z-index: -10;
   .skill-name{
@@ -90,7 +114,6 @@ code{color: $red; background-color: transparent}
         padding: 0.5rem 1rem;
         color: $red;
       }
-      p{}
     }
     &:hover{
       .portfolio-info-container{
@@ -143,4 +166,47 @@ code{color: $red; background-color: transparent}
 #contact{
   position: relative;
   z-index: -10;
+  background-color: $white;
+  .dcmf-form-control{
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $light-grey;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+    &::placeholder{
+      color: $light-grey
+    }
+  }
+  textarea{
+    resize: none;
+  }
+}
+
+footer{
+  background-color: black;
+  padding: 1.5rem;
+  a {
+    color: $dark-grey;
+    transition: all 0.5s;
+  }
+  .smooth-scroll-up{
+    position: fixed;
+    right: 5rem;
+    bottom: 5rem;
+    .scroll-up{
+      position: absolute;
+      top: 0;
+      transition: all 0.5s;
+      &:hover{
+        top: -15px;
+        transition: all 0.5s;
+      }
+      .fa-circle{
+        color: $extra-light-grey;
+        font-size: 2rem;
+      }
+    }
+  }
 }

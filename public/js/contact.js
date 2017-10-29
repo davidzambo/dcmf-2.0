@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $('#errormessage').hide();
   $('#sendmessage').hide();
+
   $('#sendmail').on('click', function(e){
     e.preventDefault();
     if ($('#name').val() === ''){
@@ -28,7 +29,7 @@ function validateVisitor(){
 
   if ($('#url').val() === ''){
     $.ajax({
-      url: 'send',
+      url: 'email',
       type: 'post',
       data: {
         '_token': $('input[name="_token"]').val(),
@@ -39,6 +40,7 @@ function validateVisitor(){
       }
     });
   }
+
   $('#name').attr('disabled', true);
   $('#email').attr('disabled', true);
   $('#message').attr('disabled', true);

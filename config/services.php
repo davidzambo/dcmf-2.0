@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => env('www.dcmf.hu'),
+        'secret' => env('key-ed3ebc28f7c657e042ee64edaacddf3c'),
     ],
 
     'ses' => [

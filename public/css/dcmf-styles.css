@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700");
+/*
+  These files contains the css of the home page
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700");
+#portfolio,
+#services,
+#skills,
+#about,
+#contact,
+#header {
+  padding-left: 5rem;
+  padding-right: 5rem; }
+
+.section-title {
+  margin: 4rem 0 2rem; }
+
+code {
+  color: #E80000;
+  background-color: transparent; }
+
+#cover-image {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -15;
+  width: 100%; }
+  #cover-image img {
+    width: 100% !important;
+    height: auto;
+    filter: sepia(0.5);
+    filter: grayscale(0.5); }
+
+#header {
+  background-color: transparent;
+  position: relative;
+  font-size: 2rem;
+  color: #F5F5F5;
+  height: 100%;
+  min-height: 100%;
+  z-index: -10; }
+  #header .row {
+    height: 100%; }
+
+#about {
+  z-index: -10;
+  position: relative;
+  background-color: #f5f8fa; }
+  #about mark {
+    background-color: #383838;
+    color: #F5F5F5; }
+  #about .p-with-list {
+    display: inline; }
+  #about ul {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    padding-left: 0; }
+    #about ul li {
+      text-align: center;
+      display: block;
+      list-style: none; }
+
+#skills {
+  background-color: #f5f8fa;
+  position: relative;
+  z-index: -10; }
+  #skills .skill-name {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    background-color: #F5F5F5;
+    color: #383838; }
+  #skills .progress {
+    height: 2.5rem;
+    font-size: 1rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    border-radius: 0; }
+
+#portfolio {
+  z-index: -10;
+  position: relative;
+  background-color: #383838;
+  color: #A5A5A5; }
+  #portfolio img {
+    position: relative;
+    z-index: 1000000;
+    display: block; }
+  #portfolio .portfolio-container {
+    position: relative;
+    z-index: 0;
+    padding: 2px; }
+    #portfolio .portfolio-container .portfolio-info-container {
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      z-index: 1000;
+      transition: all 1s;
+      background-color: #383838;
+      color: #A5A5A5; }
+      #portfolio .portfolio-container .portfolio-info-container h3 {
+        padding: 0.5rem 1rem;
+        color: #E80000; }
+    #portfolio .portfolio-container:hover .portfolio-info-container {
+      opacity: 1;
+      top: 80%;
+      z-index: 1000;
+      transition: all 1s; }
+  #portfolio .admin-button {
+    position: absolute;
+    top: 10px;
+    z-index: 10; }
+  #portfolio .edit-button {
+    right: 10px; }
+  #portfolio .delete-button {
+    left: 10px; }
+  #portfolio .image-container {
+    position: relative;
+    z-index: 5;
+    display: block; }
+
+.ck-editor__editable {
+  min-height: 300px; }
+
+#services {
+  position: relative;
+  z-index: -10;
+  min-height: 100%;
+  background-color: #383838;
+  color: #F5F5F5; }
+  #services .service-title h2 {
+    vertical-align: bottom;
+    margin-bottom: 0; }
+  #services .service-title .fa-stack {
+    text-shadow: 2px -2px 5px #777; }
+  #services .service-body {
+    padding-top: 2rem; }
+    #services .service-body p {
+      font-size: 1.3rem; }
+
+#contact {
+  position: relative;
+  z-index: -10;
+  background-color: #f5f8fa; }
+  #contact .dcmf-form-control {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #A5A5A5;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 0 0.5rem; }
+    #contact .dcmf-form-control::placeholder {
+      color: #A5A5A5; }
+  #contact textarea {
+    resize: none; }
+
+footer {
+  background-color: black;
+  padding: 1.5rem; }
+  footer a {
+    color: #383838;
+    transition: all 0.5s; }
+  footer .smooth-scroll-up {
+    position: fixed;
+    right: 5rem;
+    bottom: 5rem; }
+    footer .smooth-scroll-up .scroll-up {
+      position: absolute;
+      top: 0;
+      transition: all 0.5s; }
+      footer .smooth-scroll-up .scroll-up:hover {
+        top: -15px;
+        transition: all 0.5s; }
+      footer .smooth-scroll-up .scroll-up .fa-circle {
+        color: #F5F5F5;
+        font-size: 2rem; }
+
+.dcmf-navbar-container {
+  top: 631px;
+  left: -100px;
+  padding: 0 !important;
+  z-index: 10; }
+  .dcmf-navbar-container .navbar-brand {
+    display: none; }
+  .dcmf-navbar-container .dcmf-navbar {
+    position: absolute;
+    background-color: #F5F5F5;
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    border: 1px solid #A5A5A5;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-transform: lowercase; }
+  .dcmf-navbar-container .navbar-nav .nav-item:first-child .nav-link {
+    padding-left: 2rem;
+    border-bottom-left-radius: 10px; }
+  .dcmf-navbar-container .navbar-nav .nav-item:last-child .nav-link {
+    padding-right: 2rem;
+    border-bottom-right-radius: 10px; }
+
+.nav-item {
+  font-size: 1.5rem;
+  z-index: 2000;
+  transition: all 0.5s; }
+  .nav-item .nav-link {
+    color: #383838;
+    background-color: #F5F5F5;
+    padding: 0.5rem;
+    font-weight: 400;
+    transition: all 0.5s; }
+  .nav-item:hover .nav-link {
+    padding: 0.5rem 1.5rem;
+    color: #F5F5F5;
+    background-color: #007bff;
+    font-weight: 500;
+    transition: all 0.5s; }
+  .nav-item .nav-link.active {
+    padding: 0.5rem 1.5rem;
+    color: #F5F5F5;
+    background-color: #007bff;
+    font-weight: 500; }
+
+.nav-link {
+  z-index: 10; }
+
+.dcmf-container {
+  color: #333; }
+  .dcmf-container div {
+    display: inline-block; }
+    .dcmf-container div:first-child, .dcmf-container div:last-child {
+      font-weight: bold; }
+    .dcmf-container div:not(:first-child):not(:last-child)::first-letter {
+      color: white;
+      background-color: red;
+      border: 1px solid #090f0f;
+      padding: 0 0.15rem;
+      margin: 0 0.1rem; }
+    .dcmf-container div:nth-child(5)::first-letter {
+      padding: 0 0.25rem !important; }
+
+.dcmf-container-block {
+  font-size: 3rem; }
+  .dcmf-container-block .logo-bracket {
+    display: inline-block;
+    width: 1em;
+    text-align: center; }
+  .dcmf-container-block .logo-part:nth-child(2) {
+    display: inline-block; }
+  .dcmf-container-block .logo-part {
+    margin-bottom: 0.5rem; }
+  .dcmf-container-block .capital {
+    font-family: 'Roboto Mono', monospace;
+    color: #F5F5F5;
+    background-color: #E80000;
+    border: 1px solid #090f0f;
+    margin-right: 0.05em;
+    font-weight: 400;
+    padding: 0 0.15em;
+    line-height: 0.1rem; }
+  .dcmf-container-block .logo-part-last {
+    display: inline-block; }
+  .dcmf-container-block .one-char-margin {
+    margin-left: 1em; }
+
+.shadow {
+  text-shadow: 2px 2px #383838; }
+
+@media only screen and (max-width: 767px) {
+  /*body{font-size: 21px;}*/
+  .navbar {
+    background-color: #f5f8fa; }
+
+  .navbar .navbar-brand {
+    display: inline; }
+
+  .dcmf-navbar-container {
+    top: 0; }
+
+  .dcmf-navbar-container .dcmf-navbar {
+    transform: rotate(0deg);
+    width: 100%;
+    border-radius: 0px; }
+
+  .active,
+  .nav-item *,
+  .nav-item:hover * {
+    border-radius: 0px !important; }
+
+  #portfolio,
+  #services,
+  #skills,
+  #about,
+  #contact,
+  #header {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem; } }
+html {
+  min-height: 100%; }
+
+body {
+  font-size: 24px;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%; }
+
+.see-borders * {
+  border: 1px solid black; }
+
+.clickable:hover {
+  cursor: pointer; }
+
+input[type=file] {
+  display: none; }
+
+#logout-button {
+  position: fixed;
+  bottom: 80px;
+  right: 20px; }
+
+section, nav, footer {
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: -1px; }
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0; }
+  .no-gutters > .col,
+  .no-gutters > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0; }
+
+/*# sourceMappingURL=dcmf-styles.css.map */

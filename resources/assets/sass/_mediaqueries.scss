@@ -1,0 +1,23 @@
+@media only screen and (max-width: 767px){
+  /*body{font-size: 21px;}*/
+  .navbar{background-color: $white;}
+  .navbar .navbar-brand{display:inline;}
+  .dcmf-navbar-container{top:0}
+  .dcmf-navbar-container .dcmf-navbar{
+    transform: rotate(0deg);
+    width: 100%;
+    border-radius: 0px;
+  }
+  .active,
+  .nav-item *,
+  .nav-item:hover *{border-radius:0px!important;}
+  #portfolio,
+  #services,
+  #skills,
+  #about,
+  #contact,
+  #header{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}

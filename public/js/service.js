@@ -11,7 +11,7 @@ $('#serviceModal').on('show.bs.modal', function(event){
   modal.find('input[name="serviceName"]').val(name);
   modal.find('input[name="serviceIcon"]').val(icon);
   modal.find('input[name="serviceOrderNumber"]').val(ordernumber);
-  modal.find('.ck-editor__editable p').html(description);
+  modal.find('textarea[name="serviceDescription"]').val(description);
   if (action === 'new'){
     $('#addNewService').show();
     $('#updateService').hide();
@@ -36,7 +36,7 @@ $('#addNewService').on('click', function(){
       token = $('input[name=_token]').val(),
       icon = $('#serviceIcon').val(),
       orderNumber = $('#serviceOrderNumber').val(),
-      description = $('.ck-editor__editable p').html();
+      description = $('#serviceDescription').val();
 
   if ((name !== '') && (icon !== '') && (orderNumber !== '') && (description !== '')){
     $.ajax({
@@ -66,7 +66,7 @@ $('#updateService').on('click', function(){
       icon = $('#serviceIcon').val(),
       id = $('input[name=serviceId]').val(),
       orderNumber = $('#serviceOrderNumber').val(),
-      description = $('.ck-editor__editable p').html();
+      description = $('#serviceDescription').val();
 
   if ((name !== '') && (icon !== '') && (orderNumber !== '') && (description !== '')){
     $.ajax({

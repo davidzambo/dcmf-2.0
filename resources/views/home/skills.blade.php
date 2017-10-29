@@ -5,14 +5,14 @@
         <code>&lt;skills&gt;</code>
       </div>
 
-      <div class="row">
+      <div class="row" id="skills-content">
 
         @foreach($skills as $skill)
 
-          <div class="col-6">
+          <div class="col-md-6 col-12">
             <div class="row no-gutters">
 
-              <div class="col-3 skill-name text-center">
+              <div class="col-lg-3 col-4 skill-name text-center">
                 {{ $skill->name }}
               </div>
               <div class="col">

@@ -10,4 +10,6 @@ Route::resource('service', 'ServiceController');
 
 Route::resource('skill', 'SkillsController');
 
+Route::resource('email', 'EmailController');
+
 // Route::resource('skills','SkillsController');

@@ -4,9 +4,9 @@
       <div class="section-title text-left">
         <code>&lt;portfolio&gt;</code>
       </div>
-      <div class="row">
+      <div class="row" id ="portfolio-content">
         @foreach($portfolios as $portfolio)
-          <div class="col-4 portfolio-container">
+          <div class="col-md-4 col-6 portfolio-container">
 
             @if (!empty(session('username')))
             <div class="admin-button edit-button">

@@ -23,6 +23,7 @@
 
 .dcmf-container-block{
   font-size: 3rem;
+
   .logo-bracket {
     display: inline-block;
     width: 1em;
@@ -32,22 +33,20 @@
 
   .logo-part{
     margin-bottom: 0.5rem;
-    .capital{
-      font-family: 'Roboto Mono', monospace;
-      color: $extra-light-grey;
-      background-color: $red;
-      border: 1px solid #090f0f;
-      margin-right: 0.15rem;
-      font-weight: 500;
-      padding: 0 0.5rem;
-      line-height: 0.1rem;
-
-    }
+  }
+  .capital{
+    font-family: 'Roboto Mono', monospace;
+    color: $extra-light-grey;
+    background-color: $red;
+    border: 1px solid #090f0f;
+    margin-right: 0.05em;
+    font-weight: 400;
+    padding: 0 0.15em;
+    line-height: 0.1rem;
   }
   .logo-part-last {display: inline-block;}
   .one-char-margin{
     margin-left: 1em;
   }
 }
-
-// * {border: 1px solid black;}
+.shadow{text-shadow: 2px 2px $dark-grey;}

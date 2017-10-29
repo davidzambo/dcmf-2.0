@@ -1,0 +1,54 @@
+@import "colors";
+@import "typography";
+@import "pages/home";
+@import "navbar";
+// DCFM Logo
+@import "dcmf";
+@import "mediaqueries";
+
+html{min-height: 100%;}
+
+body{
+  font-size: 24px;
+  font-family: $kaffeesatz;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.see-borders{
+  *{border: 1px solid black;}
+}
+
+.clickable {
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+input[type=file]{display: none};
+
+#logout-button {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+}
+
+section, nav, footer{
+  font-family: $rajdhani;
+  letter-spacing: -1px;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

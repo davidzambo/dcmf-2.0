@@ -1,7 +1,7 @@
 @extends('masters.home')
 
 @section('header')
-  @include('layouts.header', ['title' => 'Welcome to David\'s Code ManuFactory'])
+  @include('layouts.header', ['title' => 'David\'s Code ManuFactory::From(Idea)->To(Reality);'])
 @stop
 
 @section('navbar')

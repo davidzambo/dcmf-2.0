@@ -16,11 +16,14 @@
 
 
 .dcmf-navbar-container{
-  position: fixed;
-  bottom: 20%;
-  left: 0px;
+  // position: fixed;
+  top: 631px;
+  left: -100px;
   padding: 0!important;
-  z-index: -1;
+  z-index: 10;
+  .navbar-brand{
+    display:none;
+  }
   .dcmf-navbar {
     position: absolute;
     background-color: $extra-light-grey;
@@ -60,26 +63,21 @@
   transition: all 0.5s;
   &:hover{
   .nav-link{
-      padding: 0.5rem 1rem;
-      color: $red;
-      background-color: $light-grey;
+      padding: 0.5rem 1.5rem;
+      color: $extra-light-grey;
+      background-color: $blue;
       font-weight: 500;
       transition: all 0.5s;
     }
   }
 
-  .active{
-    padding: 0.5rem 1rem;
-    color: $red;
-    background-color: $light-grey;
+  .nav-link.active{
+    padding: 0.5rem 1.5rem;
+    color: $extra-light-grey;
+    background-color: $blue;
     font-weight: 500;
   }
 }
 .nav-link {
   z-index: 10;
-}
-
-.no-gutters{
-  padding: 0;
-  margin: 0;
 }
