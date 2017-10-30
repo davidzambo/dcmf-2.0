@@ -8,7 +8,7 @@ $(document).ready(function(){
       $('#errormessage').show().html('It\'s much more personal if I know your name. <br>You can enter it now! ');
       $('#name').focus();
     } else if ($('#email').val() === ''){
-        $('#errormessage').show().html('I would like to write to you, so I need your e-mail address.');
+        $('#errormessage').show().html('I would like to write to you, <br> so I need your e-mail address.');
         $('#email').focus();
     } else if ($('#message').val() === ''){
         $('#errormessage').show().html('A message without a message is not a real message.<br>So let\'s make it a message!');
@@ -43,10 +43,11 @@ function validateVisitor(){
 
   $('#name').attr('disabled', true);
   $('#email').attr('disabled', true);
+  $('#subject').attr('disabled', true);
   $('#message').attr('disabled', true);
   $('#recaptcha-here').hide();
   $('#contact-submit').hide();
   $('#errormessage').hide();
   $('#contactForm').fadeTo('slow', 0.6);
-  $('#sendmessage').addClass('show');
+  $('#sendmessage').show();
 }

@@ -1,7 +1,7 @@
 <header class="" id="cover-image">
   <div class="row no-gutters">
     <div class="col">
-      <img src="storage/images/notebook-desktop.jpg" alt="Background image" id="bg-image">
+
     </div>
   </div>
 </header>

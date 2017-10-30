@@ -10,11 +10,11 @@
 #about,
 #contact,
 #header {
-  padding-left: 5rem;
-  padding-right: 5rem; }
+  padding-left: 3.5rem;
+  padding-right: 3.5rem; }
 
 .section-title {
-  margin: 4rem 0 2rem; }
+  margin: 3rem 0 1rem; }
 
 code {
   color: #E80000;
@@ -24,16 +24,16 @@ code {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: -15;
-  width: 100%; }
-  #cover-image img {
-    width: 100% !important;
-    height: auto;
-    filter: sepia(0.5);
-    filter: grayscale(0.5); }
+  z-index: -15000;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url("../storage/images/notebook-desktop.jpg"), url("storage/images/notebook-desktop.jpg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none; }
 
 #header {
-  background-color: transparent;
   position: relative;
   font-size: 2rem;
   color: #F5F5F5;
@@ -45,6 +45,7 @@ code {
 
 #about {
   z-index: -10;
+  font-size: 1rem;
   position: relative;
   background-color: #f5f8fa; }
   #about mark {
@@ -68,14 +69,14 @@ code {
   z-index: -10; }
   #skills .skill-name {
     margin: 0.5rem 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
     background-color: #F5F5F5;
     color: #383838; }
   #skills .progress {
-    height: 2.5rem;
+    height: 1.5rem;
     font-size: 1rem;
     margin: 0.5rem 0.5rem 0.5rem 0;
     border-radius: 0; }
@@ -84,7 +85,8 @@ code {
   z-index: -10;
   position: relative;
   background-color: #383838;
-  color: #A5A5A5; }
+  color: #A5A5A5;
+  font-size: 1rem; }
   #portfolio img {
     position: relative;
     z-index: 1000000;
@@ -95,14 +97,15 @@ code {
     padding: 2px; }
     #portfolio .portfolio-container .portfolio-info-container {
       opacity: 0;
+      font-size: 1rem;
       position: absolute;
       top: 100%;
       z-index: 1000;
       transition: all 1s;
       background-color: #383838;
       color: #A5A5A5; }
-      #portfolio .portfolio-container .portfolio-info-container h3 {
-        padding: 0.5rem 1rem;
+      #portfolio .portfolio-container .portfolio-info-container p {
+        padding: 0.25rem 0.5rem;
         color: #E80000; }
     #portfolio .portfolio-container:hover .portfolio-info-container {
       opacity: 1;
@@ -129,6 +132,7 @@ code {
   position: relative;
   z-index: -10;
   min-height: 100%;
+  font-size: 1rem;
   background-color: #383838;
   color: #F5F5F5; }
   #services .service-title h2 {
@@ -137,9 +141,9 @@ code {
   #services .service-title .fa-stack {
     text-shadow: 2px -2px 5px #777; }
   #services .service-body {
-    padding-top: 2rem; }
+    padding: 1rem 0.45rem; }
     #services .service-body p {
-      font-size: 1.3rem; }
+      font-size: 1rem; }
 
 #contact {
   position: relative;
@@ -151,7 +155,7 @@ code {
     border: none;
     border-bottom: 1px solid #A5A5A5;
     outline: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0 0.5rem; }
     #contact .dcmf-form-control::placeholder {
       color: #A5A5A5; }
@@ -166,24 +170,21 @@ footer {
     transition: all 0.5s; }
   footer .smooth-scroll-up {
     position: fixed;
-    right: 5rem;
-    bottom: 5rem; }
+    right: 1rem;
+    bottom: 1rem; }
     footer .smooth-scroll-up .scroll-up {
-      position: absolute;
+      position: relative;
       top: 0;
       transition: all 0.5s; }
       footer .smooth-scroll-up .scroll-up:hover {
         top: -15px;
         transition: all 0.5s; }
-      footer .smooth-scroll-up .scroll-up .fa-circle {
-        color: #F5F5F5;
-        font-size: 2rem; }
 
 .dcmf-navbar-container {
   top: 631px;
-  left: -100px;
+  left: 0;
   padding: 0 !important;
-  z-index: 10; }
+  z-index: 1000; }
   .dcmf-navbar-container .navbar-brand {
     display: none; }
   .dcmf-navbar-container .dcmf-navbar {
@@ -211,7 +212,7 @@ footer {
     border-bottom-right-radius: 10px; }
 
 .nav-item {
-  font-size: 1.5rem;
+  font-size: 1rem;
   z-index: 2000;
   transition: all 0.5s; }
   .nav-item .nav-link {
@@ -251,7 +252,7 @@ footer {
       padding: 0 0.25rem !important; }
 
 .dcmf-container-block {
-  font-size: 3rem; }
+  font-size: 2rem; }
   .dcmf-container-block .logo-bracket {
     display: inline-block;
     width: 1em;
@@ -277,10 +278,23 @@ footer {
 .shadow {
   text-shadow: 2px 2px #383838; }
 
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 80%; }
+
+  #portfolio,
+  #services,
+  #skills,
+  #about,
+  #contact,
+  #header {
+    -webkit-transform: translate3d(0, 0, 0); } }
 @media only screen and (max-width: 767px) {
-  /*body{font-size: 21px;}*/
-  .navbar {
-    background-color: #f5f8fa; }
+  html {
+    font-size: 100%; }
+
+  body {
+    font-size: 1rem; }
 
   .navbar .navbar-brand {
     display: inline; }
@@ -304,13 +318,28 @@ footer {
   #about,
   #contact,
   #header {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem; } }
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem; }
+
+  #header {
+    background-image: url("../storage/images/notebook-desktop.jpg"), url("storage/images/notebook-desktop.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover; } }
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 140%; }
+
+  #cover-image {
+    display: block; }
+
+  #header {
+    background-image: none; } }
 html {
   min-height: 100%; }
 
 body {
-  font-size: 24px;
   font-family: "Yanone Kaffeesatz", sans-serif;
   position: absolute;
   top: 0;

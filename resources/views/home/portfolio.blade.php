@@ -6,7 +6,7 @@
       </div>
       <div class="row" id ="portfolio-content">
         @foreach($portfolios as $portfolio)
-          <div class="col-md-4 col-6 portfolio-container">
+          <div class="col-md-3 col-4 portfolio-container">
 
             @if (!empty(session('username')))
             <div class="admin-button edit-button">
@@ -32,7 +32,7 @@
             </div>
 
             <div class="portfolio-info-container" title="{{ $portfolio->long_description }}">
-              <h3>{{ $portfolio->name }}</h3>
+              <p>{{ $portfolio->name }}</p>
               <!-- <p><small>{{ $portfolio->short_descrition}}</small></p> -->
             </div>
             </a>
@@ -59,9 +59,9 @@
 
 <style>
 .greyscale{
-  -moz-filter: grayscale(1);
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
+  -moz-filter: grayscale(0.5);
+  -webkit-filter: grayscale(0.5);
+  filter: grayscale(0.5);
   transition: all 0.5s;
 }
 .greyscale:hover{

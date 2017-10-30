@@ -1,6 +1,18 @@
+@media only screen and (min-width: 320px){
+  html{font-size: 80%;}
+  #portfolio,
+  #services,
+  #skills,
+  #about,
+  #contact,
+  #header{
+    -webkit-transform: translate3d(0,0,0);
+  }
+}
+
 @media only screen and (max-width: 767px){
-  /*body{font-size: 21px;}*/
-  .navbar{background-color: $white;}
+  html{font-size: 100%;}
+  body{font-size: 1rem;}
   .navbar .navbar-brand{display:inline;}
   .dcmf-navbar-container{top:0}
   .dcmf-navbar-container .dcmf-navbar{
@@ -17,7 +29,20 @@
   #about,
   #contact,
   #header{
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
   }
+  #header{
+    background-image: url("../storage/images/notebook-desktop.jpg"), url("storage/images/notebook-desktop.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  html{font-size: 140%;}
+  #cover-image{display: block;}
+  #header{background-image: none;}
 }

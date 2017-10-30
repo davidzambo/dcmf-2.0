@@ -16,7 +16,3 @@ function setNavbarPosition(){
 $(window).on('resize load', function(){
   setNavbarPosition();
 });
-
-$(document).ready(function(){
-  $('.dcmf-navbar-container').animate({'left' : 0}, 2000);
-});

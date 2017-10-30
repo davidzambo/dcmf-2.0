@@ -22,10 +22,10 @@
               <textarea name="message" id="message" class="dcmf-form-control" placeholder="Message" rows="4" cols="80" required></textarea>
             </div>
             <div class="col-xs-8 col-xs-offset-2" id="recaptcha-here"></div>
-            <p class="text-center bg-danger text-white" id="errormessage">GALI</p>
-            <p class="text-center bg-success text-white" id="sendmessage">HALI</p>
+            <p class="text-center bg-danger text-white" id="errormessage"></p>
+            <p class="text-center bg-success text-white" id="sendmessage">Your message has been sent! <br>I will reply you soon!</p>
             <button type="submit" name="sendmail" class="btn btn-primary btn-block" id="sendmail">
-              <i class="fa fa-2x fa-paper-plane" aria-hidden="true"></i>
+              <i class="fa fa-lg fa-paper-plane" aria-hidden="true"></i>
             </button>
           </form>
         </div>

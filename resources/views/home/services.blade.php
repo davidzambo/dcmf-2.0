@@ -16,7 +16,7 @@
                   </span>
                 </div>
                 <div class="col-lg-6 col-9 text-left align-self-center">
-                  <h2>{{ $service->name }}</h2>
+                  <h3>{{ $service->name }}</h3>
                 </div>
               </div>
 

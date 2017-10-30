@@ -6,11 +6,15 @@ position.services = document.querySelector('#services').getBoundingClientRect();
 position.skills = document.querySelector('#skills').getBoundingClientRect();
 position.portfolio = document.querySelector('#portfolio').getBoundingClientRect();
 position.contact = document.querySelector('#contact').getBoundingClientRect();
-$('#about-content,\
-   #services-content,\
-   #skills-content,\
-   #portfolio-content,\
-   #contact-content').css('opacity', 0);
+
+
+if (window.innerWidth > 768){
+  $('#about-content,\
+  #services-content,\
+  #skills-content,\
+  #portfolio-content,\
+  #contact-content').css('opacity', 0);
+}
 
 
 function fadeInSections(){
@@ -18,21 +22,25 @@ function fadeInSections(){
 
   // SET UP ABOUT SECTION FADE IN
   if ( pos + (position.window * 0.9) > position.about.top ){
-    $('#about-content').animate({'opacity' : '1'}, 1500);
+    $('#about-content').animate({'opacity' : '1'}, 800, 'linear');
   }
   if ( pos + (position.window * 0.9) > position.services.top ){
-    $('#services-content').animate({'opacity' : '1'}, 1500);
+    $('#services-content').animate({'opacity' : '1'}, 800, 'linear');
   }
   if ( pos + (position.window * 0.9) > position.skills.top ){
-    $('#skills-content').animate({'opacity' : '1'}, 1500);
+    $('#skills-content').animate({'opacity' : '1'}, 800, 'linear');
   }
   if ( pos + (position.window * 0.9) > position.portfolio.top ){
-    $('#portfolio-content').animate({'opacity' : '1'}, 1500);
+    $('#portfolio-content').animate({'opacity' : '1'}, 800, 'linear');
   }
   if ( pos + (position.window * 0.9) > position.contact.top ){
-    $('#contact-content').animate({'opacity' : '1'}, 1500);
+    $('#contact-content').animate({'opacity' : '1'}, 800, 'linear');
     document.removeEventListener('scroll', fadeInSections);
   }
 }
 
 document.addEventListener('scroll', fadeInSections, false);
+
+$(document.body).on('touchmove', function(){
+  fadeInSections();
+});
