@@ -17,7 +17,7 @@
 
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="https://www.dcmf.hu/favicon.jpg" type="image/x-icon"/>
 
     <!-- Base style contains Bootstrap 4.0.0. and FontAwesome -->
     <link rel="stylesheet" href="css/app.css">
@@ -30,4 +30,4 @@
     <!-- Base JS with Bootstrap JS and JQuery -->
     <script src="js/app.js"></script>
   </head>
-<body data-spy="scroll" data-target="#dcmf-navbar" data-offset="300">
+<body>

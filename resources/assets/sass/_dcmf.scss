@@ -22,11 +22,11 @@
 
 
 .dcmf-container-block{
-  font-size: 2rem;
+  font-size: 4.5rem;
 
   .logo-bracket {
     display: inline-block;
-    width: 1em;
+    width: 4.5rem;
     text-align: center;
   }
   .logo-part:nth-child(2) {display: inline-block;}
@@ -39,14 +39,14 @@
     color: $extra-light-grey;
     background-color: $red;
     border: 1px solid #090f0f;
-    margin-right: 0.05em;
+    margin-right: 0.12em;
     font-weight: 400;
-    padding: 0 0.15em;
-    line-height: 0.1rem;
+    padding: 0 0.5rem;
+    line-height: 0.25rem;
   }
   .logo-part-last {display: inline-block;}
   .one-char-margin{
-    margin-left: 1em;
+    margin-left: 4.5rem;
   }
 }
 .shadow{text-shadow: 2px 2px $dark-grey;}

@@ -25,7 +25,7 @@
             <p class="text-center bg-danger text-white" id="errormessage"></p>
             <p class="text-center bg-success text-white" id="sendmessage">Your message has been sent! <br>I will reply you soon!</p>
             <button type="submit" name="sendmail" class="btn btn-primary btn-block" id="sendmail">
-              <i class="fa fa-lg fa-paper-plane" aria-hidden="true"></i>
+              <i class="fa fa-3x m-2 fa-paper-plane" aria-hidden="true"></i>
             </button>
           </form>
         </div>

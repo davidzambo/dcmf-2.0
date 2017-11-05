@@ -10,11 +10,12 @@
 #about,
 #contact,
 #header {
-  padding-left: 3.5rem;
-  padding-right: 3.5rem; }
+  padding-left: 7rem;
+  padding-right: 7rem; }
 
 .section-title {
-  margin: 3rem 0 1rem; }
+  font-size: 2.5rem;
+  margin: 7rem 0 2rem; }
 
 code {
   color: #E80000;
@@ -27,7 +28,7 @@ code {
   z-index: -15000;
   min-width: 100%;
   min-height: 100%;
-  background-image: url("../storage/images/notebook-desktop.jpg"), url("storage/images/notebook-desktop.jpg");
+  background-image: url("../images/notebook-desktop.jpg"), url("images/notebook-desktop.jpg");
   background-position: top right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,7 +36,7 @@ code {
 
 #header {
   position: relative;
-  font-size: 2rem;
+  font-size: 4.5rem;
   color: #F5F5F5;
   height: 100%;
   min-height: 100%;
@@ -45,7 +46,7 @@ code {
 
 #about {
   z-index: -10;
-  font-size: 1rem;
+  font-size: 2.25rem;
   position: relative;
   background-color: #f5f8fa; }
   #about mark {
@@ -66,38 +67,44 @@ code {
 #skills {
   background-color: #f5f8fa;
   position: relative;
-  z-index: -10; }
+  z-index: -10;
+  font-size: 2.25rem; }
   #skills .skill-name {
-    margin: 0.5rem 0;
-    font-size: 1rem;
+    margin: 1rem 0;
+    font-size: 2.25rem;
     font-weight: 400;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
     background-color: #F5F5F5;
     color: #383838; }
   #skills .progress {
-    height: 1.5rem;
-    font-size: 1rem;
-    margin: 0.5rem 0.5rem 0.5rem 0;
+    height: 3.8rem;
+    font-size: 2.0rem;
+    margin: 1rem 1rem 1rem 0;
     border-radius: 0; }
+  #skills .fa-pencil,
+  #skills .fa-times {
+    margin: 1rem 0;
+    font-size: 3.25rem !important; }
 
 #portfolio {
   z-index: -10;
   position: relative;
   background-color: #383838;
   color: #A5A5A5;
-  font-size: 1rem; }
+  font-size: 2.25rem; }
   #portfolio img {
     position: relative;
     z-index: 1000000;
-    display: block; }
+    display: block;
+    max-width: 100%; }
   #portfolio .portfolio-container {
     position: relative;
     z-index: 0;
     padding: 2px; }
     #portfolio .portfolio-container .portfolio-info-container {
       opacity: 0;
-      font-size: 1rem;
+      font-size: 2.25rem;
       position: absolute;
       top: 100%;
       z-index: 1000;
@@ -105,8 +112,9 @@ code {
       background-color: #383838;
       color: #A5A5A5; }
       #portfolio .portfolio-container .portfolio-info-container p {
-        padding: 0.25rem 0.5rem;
-        color: #E80000; }
+        padding: 0.5rem 1rem;
+        color: #E80000;
+        font-weight: 500; }
     #portfolio .portfolio-container:hover .portfolio-info-container {
       opacity: 1;
       top: 80%;
@@ -125,38 +133,40 @@ code {
     z-index: 5;
     display: block; }
 
-.ck-editor__editable {
-  min-height: 300px; }
-
 #services {
   position: relative;
+  font-size: 2.25rem;
   z-index: -10;
   min-height: 100%;
-  font-size: 1rem;
   background-color: #383838;
   color: #F5F5F5; }
-  #services .service-title h2 {
-    vertical-align: bottom;
-    margin-bottom: 0; }
-  #services .service-title .fa-stack {
-    text-shadow: 2px -2px 5px #777; }
+  #services .service-title {
+    font-size: 3rem; }
+    #services .service-title h3 {
+      font-size: 3rem;
+      vertical-align: bottom;
+      margin-bottom: 0; }
+    #services .service-title .fa-stack {
+      text-shadow: 2px -2px 5px #777; }
   #services .service-body {
-    padding: 1rem 0.45rem; }
+    padding: 2rem 1rem; }
     #services .service-body p {
-      font-size: 1rem; }
+      font-size: 2.25rem; }
 
 #contact {
   position: relative;
   z-index: -10;
-  background-color: #f5f8fa; }
+  background-color: #f5f8fa;
+  font-size: 2.25rem; }
   #contact .dcmf-form-control {
     background-color: transparent;
     width: 100%;
     border: none;
     border-bottom: 1px solid #A5A5A5;
     outline: none;
-    font-size: 1rem;
-    padding: 0 0.5rem; }
+    font-size: 2.25rem;
+    padding: 0 0.5rem;
+    margin: 1rem 0; }
     #contact .dcmf-form-control::placeholder {
       color: #A5A5A5; }
   #contact textarea {
@@ -164,14 +174,15 @@ code {
 
 footer {
   background-color: black;
-  padding: 1.5rem; }
+  padding: 3.8rem;
+  font-size: 2.25rem; }
   footer a {
     color: #383838;
     transition: all 0.5s; }
   footer .smooth-scroll-up {
     position: fixed;
-    right: 1rem;
-    bottom: 1rem; }
+    right: 2.25rem;
+    bottom: 2.25rem; }
     footer .smooth-scroll-up .scroll-up {
       position: relative;
       top: 0;
@@ -180,55 +191,61 @@ footer {
         top: -15px;
         transition: all 0.5s; }
 
-.dcmf-navbar-container {
-  top: 631px;
+.fa-times,
+.fa-pencil {
+  font-size: 2.25rem;
+  vertical-align: middle; }
+
+.modal,
+.modal * {
+  font-size: 2rem; }
+
+.navbar-toggler {
+  background-color: #383838;
+  color: #F5F5F5; }
+
+#navbar-content {
+  position: fixed;
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100; }
+
+.dcmf-navbar-container {
   padding: 0 !important;
   z-index: 1000; }
   .dcmf-navbar-container .navbar-brand {
     display: none; }
   .dcmf-navbar-container .dcmf-navbar {
     position: absolute;
-    background-color: #F5F5F5;
-    -webkit-transform-origin: 0% 0%;
-    -moz-transform-origin: 0% 0%;
-    -ms-transform-origin: 0% 0%;
-    -o-transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    border: 1px solid #A5A5A5;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    text-transform: lowercase; }
-  .dcmf-navbar-container .navbar-nav .nav-item:first-child .nav-link {
-    padding-left: 2rem;
-    border-bottom-left-radius: 10px; }
-  .dcmf-navbar-container .navbar-nav .nav-item:last-child .nav-link {
-    padding-right: 2rem;
-    border-bottom-right-radius: 10px; }
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #383838;
+    text-transform: uppercase; }
+    .dcmf-navbar-container .dcmf-navbar .navbar-nav {
+      padding-top: 5rem; }
 
 .nav-item {
-  font-size: 1rem;
+  font-size: 3rem;
   z-index: 2000;
   transition: all 0.5s; }
   .nav-item .nav-link {
-    color: #383838;
-    background-color: #F5F5F5;
-    padding: 0.5rem;
-    font-weight: 400;
-    transition: all 0.5s; }
-  .nav-item:hover .nav-link {
-    padding: 0.5rem 1.5rem;
+    background-color: #383838;
     color: #F5F5F5;
-    background-color: #007bff;
+    padding: 0.8rem;
+    font-weight: 400;
+    transition: all 0.5s;
+    text-align: left; }
+    .nav-item .nav-link i {
+      margin: 0 1rem 0 4rem; }
+  .nav-item:hover .nav-link {
+    color: #E80000;
     font-weight: 500;
     transition: all 0.5s; }
   .nav-item .nav-link.active {
-    padding: 0.5rem 1.5rem;
+    padding: 0.8rem 1.5rem;
     color: #F5F5F5;
     background-color: #007bff;
     font-weight: 500; }
@@ -252,10 +269,10 @@ footer {
       padding: 0 0.25rem !important; }
 
 .dcmf-container-block {
-  font-size: 2rem; }
+  font-size: 4.5rem; }
   .dcmf-container-block .logo-bracket {
     display: inline-block;
-    width: 1em;
+    width: 4.5rem;
     text-align: center; }
   .dcmf-container-block .logo-part:nth-child(2) {
     display: inline-block; }
@@ -266,51 +283,21 @@ footer {
     color: #F5F5F5;
     background-color: #E80000;
     border: 1px solid #090f0f;
-    margin-right: 0.05em;
+    margin-right: 0.12em;
     font-weight: 400;
-    padding: 0 0.15em;
-    line-height: 0.1rem; }
+    padding: 0 0.5rem;
+    line-height: 0.25rem; }
   .dcmf-container-block .logo-part-last {
     display: inline-block; }
   .dcmf-container-block .one-char-margin {
-    margin-left: 1em; }
+    margin-left: 4.5rem; }
 
 .shadow {
   text-shadow: 2px 2px #383838; }
 
-@media only screen and (min-width: 320px) {
-  html {
-    font-size: 80%; }
-
-  #portfolio,
-  #services,
-  #skills,
-  #about,
-  #contact,
-  #header {
-    -webkit-transform: translate3d(0, 0, 0); } }
 @media only screen and (max-width: 767px) {
   html {
-    font-size: 100%; }
-
-  body {
-    font-size: 1rem; }
-
-  .navbar .navbar-brand {
-    display: inline; }
-
-  .dcmf-navbar-container {
-    top: 0; }
-
-  .dcmf-navbar-container .dcmf-navbar {
-    transform: rotate(0deg);
-    width: 100%;
-    border-radius: 0px; }
-
-  .active,
-  .nav-item *,
-  .nav-item:hover * {
-    border-radius: 0px !important; }
+    font-size: 31.5%; }
 
   #portfolio,
   #services,
@@ -318,24 +305,51 @@ footer {
   #about,
   #contact,
   #header {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 1rem; }
+    padding-left: 3rem;
+    padding-right: 3rem; }
+
+  .dcmf-navbar-container .dcmf-navbar {
+    width: 100%;
+    border-radius: 0px; }
+    .dcmf-navbar-container .dcmf-navbar .navbar-nav {
+      padding-top: 15rem;
+      padding-left: 35%; }
 
   #header {
-    background-image: url("../storage/images/notebook-desktop.jpg"), url("storage/images/notebook-desktop.jpg");
+    background-image: url("../images/notebook-desktop.jpg"), url("images/notebook-desktop.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover; } }
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  html {
+    font-size: 50%; }
+
+  #portfolio,
+  #services,
+  #skills,
+  #about,
+  #contact,
+  #header {
+    padding-left: 2rem;
+    padding-right: 2rem; } }
 @media only screen and (min-width: 768px) {
   html {
-    font-size: 140%; }
+    font-size: 62.5%; }
 
   #cover-image {
     display: block; }
 
   #header {
-    background-image: none; } }
+    background-image: none; }
+
+  #portfolio,
+  #services,
+  #skills,
+  #about,
+  #contact,
+  #header {
+    padding-left: 7rem;
+    padding-right: 7rem; } }
 html {
   min-height: 100%; }
 
@@ -359,8 +373,8 @@ input[type=file] {
 
 #logout-button {
   position: fixed;
-  bottom: 80px;
-  right: 20px; }
+  bottom: 2rem;
+  left: 2rem; }
 
 section, nav, footer {
   font-family: "Rajdhani", sans-serif;

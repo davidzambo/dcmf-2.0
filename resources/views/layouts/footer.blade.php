@@ -6,27 +6,27 @@
         </div>
         <div class="col-1">
           <a href="https://www.facebook.com/david.baar.718" target="_blank">
-            <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i>
+            <i class="fa fa-facebook-official" aria-hidden="true"></i>
           </a>
         </div>
         <div class="col-1">
           <a href="https://www.linkedin.com/in/david-zambo/" target="_blank">
-            <i class="fa fa-lg fa-linkedin-square" aria-hidden="true"></i>
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
           </a>
         </div>
         <div class="col-1">
           <a href="https://github.com/davidzambo" target="_blank">
-            <i class="fa fa-lg fa-github-square" aria-hidden="true"></i>
+            <i class="fa fa-github-square" aria-hidden="true"></i>
           </a>
         </div>
         <div class="col-1">
           <a href="https://stackoverflow.com/users/7706546/david-zambo" target="_blank">
-            <i class="fa fa-lg fa-stack-overflow" aria-hidden="true"></i>
+            <i class="fa fa-stack-overflow" aria-hidden="true"></i>
           </a>
         </div>
         <div class="col-1">
           <a href="https://www.freecodecamp.org/davidzambo" target="_blank">
-            <i class="fa fa-lg fa-free-code-camp" aria-hidden="true"></i>
+            <i class="fa fa-free-code-camp" aria-hidden="true"></i>
           </a>
         </div>
         <div class="col text-right">
@@ -44,7 +44,7 @@
     @endif
     <script src="js/contact.js"></script>
     <script src="js/smooth-scroll.js"></script>
-    <script src="js/navbar-position.js"></script>
+    <!-- <script src="js/navbar-position.js"></script> -->
     <script src="js/fadein.js"></script>
 
     <script src='https://www.google.com/recaptcha/api.js'></script>

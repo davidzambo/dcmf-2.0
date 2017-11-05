@@ -10,18 +10,18 @@
       <div class="modal-body">
         <form id="serviceForm">
 
-          <div class="form-inline">
-            <div class="form-group mx-sm-3">
+          <div class="form-row">
+            <div class="form-group col-4">
               <label for="serviceName" class="col-form-label-sm">Name: </label>
               {{ csrf_field() }}
               <input type="hidden" name="serviceId" value="">
               <input type="text" class="form-control" id="serviceName" name="serviceName">
             </div>
-            <div class="form-group mx-sm-3">
+            <div class="form-group col-4">
               <label for="serviceIcon" class="col-form-label-sm">Icon: </label>
               <input type="text" class="form-control" id="serviceIcon" name="serviceIcon">
             </div>
-            <div class="form-group mx-sm-3">
+            <div class="form-group col-4">
               <label for="serviceOrderNumber" class="col-form-label-sm">Order number: </label>
               <input type="text" class="form-control" id="serviceOrderNumber" name="serviceOrderNumber">
             </div>
@@ -72,16 +72,8 @@
 
 <!-- CKEDITOR SCRIPTS -->
 
-<script src="./../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+
 <script>
-// ClassicEditor
-//     .create( document.querySelector( '#serviceDescription' ) )
-//     .then( editor => {
-//         // console.log( editor );
-//     } )
-//     .catch( error => {
-//         console.error( error );
-// } );
 $('#addNewService').hide();
 $('#updateService').hide();
 </script>

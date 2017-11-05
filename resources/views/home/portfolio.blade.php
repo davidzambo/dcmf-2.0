@@ -6,13 +6,13 @@
       </div>
       <div class="row" id ="portfolio-content">
         @foreach($portfolios as $portfolio)
-          <div class="col-md-3 col-4 portfolio-container">
+          <div class="col-md-3 col-4 portfolio-container" id="portfolio-{{ $portfolio->id }}">
 
             @if (!empty(session('username')))
             <div class="admin-button edit-button">
               <i class="fa fa-pencil btn-sm btn-warning clickable"
               data-toggle="modal"
-              data-target="#editPortfolio"
+              data-target="#portfolioModal"
               data-name="{{ $portfolio->name }}"
               data-link="{{ $portfolio->link }}"
               data-shortDesc="{{ $portfolio->short_description }}"
@@ -42,7 +42,7 @@
       @if (!empty(session('username')))
 
         <div class="row">
-          <div class="col-auto ml-auto clickable" data-toggle="modal" data-target="#addNewPortfolio">
+          <div class="col-auto ml-auto clickable" data-toggle="modal" data-target="#portfolioModal" data-action="new">
             <i class="fa fa-plus-circle clickable" aria-hidden="true"></i>
             Add new element
           </div>

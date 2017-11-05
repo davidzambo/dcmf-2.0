@@ -8,11 +8,14 @@
 #about,
 #contact,
 #header{
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
 }
 
-.section-title{margin: 3rem 0 1rem;}
+.section-title{
+  font-size: 2.5rem;
+  margin: 7rem 0 2rem;
+}
 code{color: $red; background-color: transparent}
 
 #cover-image{
@@ -22,7 +25,7 @@ code{color: $red; background-color: transparent}
   z-index: -15000;
   min-width: 100%;
   min-height: 100%;
-  background-image: url("../storage/images/notebook-desktop.jpg"), url("storage/images/notebook-desktop.jpg");
+  background-image: url("../images/notebook-desktop.jpg"), url("images/notebook-desktop.jpg");
   background-position: top right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,7 +34,7 @@ code{color: $red; background-color: transparent}
 
 #header{
   position: relative;
-  font-size: 2rem;
+  font-size: 4.5rem;
   color: #F5F5F5;
   height: 100%;
   min-height: 100%;
@@ -43,7 +46,7 @@ code{color: $red; background-color: transparent}
 
 #about{
   z-index: -10;
-  font-size: 1rem;
+  font-size: 2.25rem;
   position: relative;
   background-color: $white;
   mark{
@@ -70,9 +73,10 @@ code{color: $red; background-color: transparent}
   background-color: $white;
   position: relative;
   z-index: -10;
+  font-size: 2.25rem;
   .skill-name{
-    margin: 0.5rem 0;
-    font-size: 1rem;
+    margin: 1rem 0;
+    font-size: 2.25rem;
     font-weight: 400;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
@@ -80,10 +84,15 @@ code{color: $red; background-color: transparent}
     color: $dark-grey;
   }
   .progress{
-    height:1.5rem;
-    font-size: 1rem;
-    margin: 0.5rem 0.5rem 0.5rem 0;
+    height:3.8rem;
+    font-size: 2.0rem;
+    margin: 1rem 1rem 1rem 0;
     border-radius: 0;
+  }
+  .fa-pencil,
+  .fa-times{
+    margin: 1rem 0;
+    font-size: 3.25rem!important;
   }
 }
 
@@ -92,11 +101,12 @@ code{color: $red; background-color: transparent}
   position: relative;
   background-color: $dark-grey;
   color: $light-grey;
-  font-size: 1rem;
+  font-size: 2.25rem;
   img {
     position: relative;
     z-index: 1000000;
     display: block;
+    max-width: 100%;
   }
   .portfolio-container{
     position : relative;
@@ -104,7 +114,7 @@ code{color: $red; background-color: transparent}
     padding: 2px;
     .portfolio-info-container{
       opacity: 0;
-      font-size: 1rem;
+      font-size: 2.25rem;
       position: absolute;
       top: 100%;
       z-index: 1000;
@@ -112,8 +122,9 @@ code{color: $red; background-color: transparent}
       background-color: $dark-grey;
       color: $light-grey;
       p{
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem 1rem;
         color: $red;
+        font-weight: 500;
       }
     }
     &:hover{
@@ -139,18 +150,17 @@ code{color: $red; background-color: transparent}
   }
 }
 
-.ck-editor__editable {min-height: 300px;}
-
-
 #services{
   position: relative;
+  font-size: 2.25rem;
   z-index: -10;
   min-height: 100%;
-  font-size: 1rem;
   background-color: $dark-grey;
   color: $extra-light-grey;
   .service-title{
-    h2 {
+    font-size: 3rem;
+    h3 {
+      font-size: 3rem;
       vertical-align: bottom;
       margin-bottom: 0;
     }
@@ -159,8 +169,8 @@ code{color: $red; background-color: transparent}
     }
   }
   .service-body{
-    padding: 1rem 0.45rem;
-    p{ font-size: 1rem;}
+    padding: 2rem 1rem;
+    p{ font-size: 2.25rem;}
   }
 
 }
@@ -169,14 +179,16 @@ code{color: $red; background-color: transparent}
   position: relative;
   z-index: -10;
   background-color: $white;
+  font-size: 2.25rem;
   .dcmf-form-control{
     background-color: transparent;
     width: 100%;
     border: none;
     border-bottom: 1px solid $light-grey;
     outline: none;
-    font-size: 1rem;
+    font-size: 2.25rem;
     padding: 0 0.5rem;
+    margin: 1rem 0;
     &::placeholder{
       color: $light-grey
     }
@@ -188,15 +200,16 @@ code{color: $red; background-color: transparent}
 
 footer{
   background-color: black;
-  padding: 1.5rem;
+  padding: 3.8rem;
+  font-size: 2.25rem;
   a {
     color: $dark-grey;
     transition: all 0.5s;
   }
   .smooth-scroll-up{
     position: fixed;
-    right: 1rem;
-    bottom: 1rem;
+    right: 2.25rem;
+    bottom: 2.25rem;
     .scroll-up{
       position: relative;
       top: 0;
@@ -207,4 +220,15 @@ footer{
       }
     }
   }
+}
+
+.fa-times,
+.fa-pencil{
+  font-size: 2.25rem;
+  vertical-align: middle;
+}
+
+.modal,
+.modal *{
+  font-size: 2rem;
 }

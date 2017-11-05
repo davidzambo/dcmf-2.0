@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Portfolio;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Storage;
+use Validator;
 
 class PortfolioController extends Controller
 {
@@ -35,22 +36,35 @@ class PortfolioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Portfolio $p)
     {
-      $folder = 'images/portfolio';
+      $validator = Validator::make($request->all(), [
+        'portfolioName' => 'required',
+        'portfolioLink' => 'required|url',
+        'portfolioShortDescription' => 'required',
+        'portfolioLongDescription' => 'required',
+        'portfolioThumbnail' => 'required|file|image'
+      ]);
 
-      $p = new Portfolio;
+      if ($validator->passes()){
+        $p->name = $request->portfolioName;
+        $p->link = $request->portfolioLink;
+        $p->short_description = $request->portfolioShortDescription;
+        $p->long_description = $request->portfolioLongDescription;
+        $p->thumbnail = $request->file('portfolioThumbnail')->storeAs('images/portfolio', time().'-'.str_slug($p->name));
 
-      $p->name = $request->portfolioName;
-      $p->link = $request->portfolioLink;
-      $p->short_description = $request->portfolioShortDescription;
-      $p->long_description = $request->portfolioLongDescription;
-      $path = $request->file('portfolioThumbnail')->store($folder);
-      $p->thumbnail = "storage/$path";
-      $p->save();
+        $p->save();
 
-      $portfolios = Portfolio::get();
-      return view('home.portfolio', compact('portfolios'));
+        return response()->json([
+          'inserted_portfolio_element' => $p,
+          'portfolio' => Portfolio::get()
+        ]);
+      } else {
+        // VALIDATOR NOT PASSED
+        return response()->json([
+          'error' => $validator->errors()->all()
+        ]);
+      }
     }
 
     /**
@@ -84,24 +98,40 @@ class PortfolioController extends Controller
      */
     public function update(Request $request)
     {
-      $p = Portfolio::find($request->editPortfolioId);
+      $p = Portfolio::find($request->portfolioId);
 
-      if (!empty($request->editPortfolioThumbnail)){
-        Storage::delete(str_after($p->thumbnail, 'storage/'));
+      $validator = Validator::make($request->all(), [
+        'portfolioName' => 'required',
+        'portfolioLink' => 'required|url',
+        'portfolioShortDescription' => 'required',
+        'portfolioLongDescription' => 'required',
+        'portfolioThumbnail' => 'file|image'
+      ]);
 
-        $folder = 'images/portfolio';
-        $path = $request->file('editPortfolioThumbnail')->store($folder);
-        $p->thumbnail = "storage/$path";
+      if ($validator->passes()){
+
+        if (!empty($request->file('portfolioThumbnail'))){
+          $delete_result = Storage::delete($p->thumbnail);
+          $p->thumbnail = $request->file('portfolioThumbnail')->storeAs('images/portfolio', time().'-'.str_slug($p->name));
+        }
+
+        $p->name = $request->portfolioName;
+        $p->link = $request->portfolioLink;
+        $p->short_description = $request->portfolioShortDescription;
+        $p->long_description = $request->portfolioLongDescription;
+        $p->save();
+
+        return response()->json([
+          'edited_portfolio_element' => $p,
+          'delete_result' => $delete_result,
+          'portfolio' => Portfolio::get()
+        ]);
+      } else {
+        // VALIDATOR NOT PASSED
+        return response()->json([
+          'error' => $validator->errors()->all(),
+        ]);
       }
-
-      $p->name = $request->editPortfolioName;
-      $p->link = $request->editPortfolioLink;
-      $p->short_description = $request->editPortfolioShortDescription;
-      $p->long_description = $request->editPortfolioLongDescription;
-      $p->save();
-
-      $portfolios = Portfolio::get();
-      return view('home.portfolio', compact('portfolios'));
     }
 
     /**
@@ -113,10 +143,9 @@ class PortfolioController extends Controller
     public function destroy($id)
     {
         $p = Portfolio::find($id);
-        Storage::delete(str_after($p->thumbnail, 'storage/'));
+        Storage::delete(public_path($p->thumbnail));
         $p->delete();
 
-        $portfolios = Portfolio::get();
-        return view('home.portfolio', compact('portfolios'));
+        return Portfolio::get();
     }
 }

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-auto ml-auto">
-      <button class="btn btn-secondary clickable fa fa-sign-out" id="logout-button" aria-hidden="true" data-toggle="modal" data-target="#logoutModal"></button>
+      <button class="btn btn-secondary clickable fa fa-2x fa-sign-out" id="logout-button" aria-hidden="true" data-toggle="modal" data-target="#logoutModal"></button>
     </div>
   </div>
 </div>

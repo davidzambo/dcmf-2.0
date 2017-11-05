@@ -6,7 +6,7 @@
           <div class="form-group">
             <label for="username">Email:</label>
             {{ csrf_field() }}
-            <input type="text" class="form-control" id="email" name="email" placeholder="username" required>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
